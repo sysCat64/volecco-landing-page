@@ -284,6 +284,34 @@
     );
   }
 
+  // ---------- Support ----------
+  const SPONSORS_URL = "https://github.com/sponsors/sysCat64";
+
+  function Support({ locale = "ja" }) {
+    const support = getCopy(locale).sections.support;
+    return (
+      <section className="lp-section lp-support" id="support">
+        <div className="lp-container">
+          <div className="lp-support-card reveal">
+            <SplitFlap text={support.flap} align="center" size="sm" />
+            <h2 className="lp-support-title">{spans(support.title, locale)}</h2>
+            <p className="lp-support-lead">{spans(support.lead, locale)}</p>
+            <a
+              className="btn btn-primary btn-md btn-xl lp-support-cta"
+              href={SPONSORS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Icon name="heart" size={18} stroke={2.1} />
+              <span>{support.cta}</span>
+            </a>
+            <div className="lp-support-meta">{support.meta}</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   // ---------- Footer ----------
   function Footer({ onLink, locale = "ja" }) {
     const footer = getCopy(locale).sections.footer;
@@ -306,6 +334,18 @@
                   <a key={id} href={"#" + id} onClick={(e) => { e.preventDefault(); onLink(id); }}>{label}</a>
                 ))}
               </div>
+              <div className="lp-footer-col">
+                <h4>{footer.supportHeading}</h4>
+                <a
+                  href={SPONSORS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="lp-footer-extlink"
+                >
+                  {footer.supportLinkLabel}
+                  <Icon name="arrow" size={12} stroke={2.2} />
+                </a>
+              </div>
             </div>
           </div>
           <div className="lp-footer-bottom">
@@ -317,5 +357,5 @@
     );
   }
 
-  window.SolariSections = { Problem, Solution, HowItWorks, Demo, Categories, Trust, Philosophy, FinalCTA, Footer };
+  window.SolariSections = { Problem, Solution, HowItWorks, Demo, Categories, Trust, Philosophy, FinalCTA, Support, Footer };
 })();

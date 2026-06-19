@@ -4,7 +4,7 @@
   const { Icon } = window;
   const { Button } = window.SolariUI;
   const { DepartureBoardXL } = window.SolariMocks;
-  const { Problem, Solution, HowItWorks, Demo, Categories, Trust, Philosophy, FinalCTA, Footer } = window.SolariSections;
+  const { Problem, Solution, HowItWorks, Demo, Categories, Trust, Philosophy, FinalCTA, Support, Footer } = window.SolariSections;
   const COPY = window.SolariLandingCopy;
   const { useTweaks, TweaksPanel, TweakSection, TweakRadio } = window;
 
@@ -223,6 +223,7 @@
         <Trust locale={locale} />
         <Philosophy locale={locale} />
         <FinalCTA locale={locale} onExplore={explore} onHow={how} />
+        <Support locale={locale} />
         <Footer locale={locale} onLink={footerLink} />
 
         <TweaksPanel>
